@@ -1,7 +1,8 @@
 mod app;
 mod pages;
+pub mod services;
 use app::App;
 
-fn main() {
+pub fn main() {
     yew::Renderer::<App>::new().render();
 }
