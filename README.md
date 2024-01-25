@@ -16,3 +16,6 @@
 local_storage.rs:
 A service for interacting with the browser's local storage.
 The `LocalStorageService` provides methods to create, read, update, and delete key-value pairs in the browser's local storage.
+
+local_storage_state.rs:
+/// LocalStorageState represents the state and behavior associated with local storage operations.
