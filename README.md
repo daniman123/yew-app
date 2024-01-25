@@ -12,3 +12,7 @@
 # // style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 # // test: Adding missing tests or correcting existing tests
 
+
+local_storage.rs:
+A service for interacting with the browser's local storage.
+The `LocalStorageService` provides methods to create, read, update, and delete key-value pairs in the browser's local storage.
