@@ -1,4 +1,4 @@
-use crate::utils::hooks::local_storage_state::local_storage_state::LocalStorageState;
+use crate::utils::local_storage_state_manager::local_storage_state::LocalStorageState;
 use web_sys::{InputEvent, MouseEvent};
 use yew::prelude::*;
 

@@ -1,14 +1,14 @@
 use web_sys::{wasm_bindgen::JsValue, window};
 
 /// A service for interacting with the browser's local storage.
-/// 
+///
 /// The `LocalStorageService` provides methods to create, read, update, and delete key-value pairs in the browser's local storage.
 /// This struct uses the `web_sys` crate to interface with Web APIs.
 pub struct LocalStorageService;
 
 impl LocalStorageService {
     /// Stores a key-value pair in the local storage.
-    /// 
+    ///
     /// # Parameters
     /// - `key`: A string slice representing the key.
     /// - `value`: A string slice representing the value to be stored.
@@ -28,7 +28,7 @@ impl LocalStorageService {
     }
 
     /// Retrieves a value from local storage by key.
-    /// 
+    ///
     /// # Parameters
     /// - `key`: A string slice representing the key to retrieve.
     ///
@@ -49,7 +49,7 @@ impl LocalStorageService {
 
     /// Updates the value of an existing key in local storage.
     /// This is an alias for the `create` method, as updating is essentially a re-creation in local storage.
-    /// 
+    ///
     /// # Parameters
     /// - `key`: A string slice representing the key.
     /// - `value`: A string slice representing the new value.
@@ -64,7 +64,7 @@ impl LocalStorageService {
     }
 
     /// Removes a key-value pair from local storage.
-    /// 
+    ///
     /// # Parameters
     /// - `key`: A string slice representing the key to be removed.
     ///

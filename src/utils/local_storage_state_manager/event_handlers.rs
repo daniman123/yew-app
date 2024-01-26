@@ -1,5 +1,5 @@
-use crate::utils::hooks::local_storage_state::events::Event;
-use crate::utils::hooks::local_storage_state::local_storage_state::LocalStorageState;
+use crate::utils::local_storage_state_manager::events::Event;
+use crate::utils::local_storage_state_manager::local_storage_state::LocalStorageState;
 
 /// Updates the `input_key` of the `LocalStorageState` based on an input event.
 ///

@@ -1,7 +1,7 @@
 use web_sys::{InputEvent, MouseEvent};
 use yew::prelude::*;
 
-use crate::utils::hooks::local_storage_state::{
+use crate::utils::local_storage_state_manager::{
     event_handlers::{on_key_change, on_load, on_save, on_value_change},
     events::{make_callback, Event},
     local_storage_state::LocalStorageState,
