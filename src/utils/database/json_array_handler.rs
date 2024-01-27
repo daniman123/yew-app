@@ -64,7 +64,6 @@ where
     serde_json::to_string(data)
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -47,22 +47,6 @@ impl LocalStorageService {
         local_storage.get_item(key)
     }
 
-    /// Updates the value of an existing key in local storage.
-    /// This is an alias for the `create` method, as updating is essentially a re-creation in local storage.
-    ///
-    /// # Parameters
-    /// - `key`: A string slice representing the key.
-    /// - `value`: A string slice representing the new value.
-    ///
-    /// # Returns
-    /// Same as `create` method.
-    ///
-    /// # Panics
-    /// Panics if the global `window` object does not exist.
-    pub fn update(key: &str, value: &str) -> Result<(), JsValue> {
-        Self::create(key, value)
-    }
-
     /// Removes a key-value pair from local storage.
     ///
     /// # Parameters

@@ -14,17 +14,6 @@ fn test_create_and_read() {
 }
 
 #[wasm_bindgen_test]
-fn test_update() {
-    let key = "test_key";
-    let value = "updated_value";
-
-    LocalStorageService::update(key, value).expect("Failed to update item");
-    let read_value = LocalStorageService::read(key).expect("Failed to read item");
-
-    assert_eq!(read_value, Some(value.to_string()));
-}
-
-#[wasm_bindgen_test]
 fn test_delete() {
     let key = "test_key";
 
