@@ -17,5 +17,14 @@ local_storage.rs:
 A service for interacting with the browser's local storage.
 The `LocalStorageService` provides methods to create, read, update, and delete key-value pairs in the browser's local storage.
 
-local_storage_state.rs:
-`LocalStorageState` represents the state and behavior associated with local storage operations.
+database_manager.rs:
+`DatabaseManager` is a struct representing the data related to meditation.
+This struct can be serialized and deserialized for storage purposes
+Manages database operations for `MeditationData`.
+
+meditation_database.rs:
+`MeditationData` holds information about a meditation session.
+It includes the date and time of the session, its duration, the category of meditation,
+and the name of the speaker or guide.
+`MeditationDataBuilder` is a builder for `MeditationData`.
+It provides a way to construct a `MeditationData` instance with optional fields.

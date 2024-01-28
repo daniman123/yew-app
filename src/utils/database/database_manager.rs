@@ -1,18 +1,13 @@
-// External crate imports
-use serde::{Deserialize, Serialize};
 use web_sys::wasm_bindgen::JsValue;
 use yew_app::services::local_storage::LocalStorageService;
 
-use crate::utils::local_storage_state_manager::json_array_handler::{
-    deserialize_json_array, serialize_json_array,
+use super::{
+    json_array_handler::{deserialize_json_array, serialize_json_array},
+    meditation_log::meditation_database::MeditationData,
 };
 
 /// A struct representing the data related to meditation.
 /// This struct can be serialized and deserialized for storage purposes.
-#[derive(Deserialize, Serialize, Clone, Copy)]
-pub struct MeditationData {
-    // Fields for MeditationData can be added here
-}
 
 /// Manages database operations for `MeditationData`.
 pub struct DatabaseManager {}
