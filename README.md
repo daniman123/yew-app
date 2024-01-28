@@ -28,3 +28,9 @@ It includes the date and time of the session, its duration, the category of medi
 and the name of the speaker or guide.
 `MeditationDataBuilder` is a builder for `MeditationData`.
 It provides a way to construct a `MeditationData` instance with optional fields.
+
+log_meditation.rs:
+`log_meditation_data` logs meditation data into the database.
+This function takes in meditation data parameters, constructs a MeditationData object using
+the MeditationDataBuilder, and then attempts to write this data to the database using the
+DatabaseManager. If the construction of the MeditationData object fails, it does nothing.
