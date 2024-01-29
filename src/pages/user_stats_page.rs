@@ -8,7 +8,7 @@ use crate::utils::local_storage_state_manager::{
 };
 
 #[function_component]
-pub fn UserStats() -> Html {
+pub fn UserStatsPage() -> Html {
     let state = use_state(LocalStorageState::new);
 
     let on_key_change_cb = {
