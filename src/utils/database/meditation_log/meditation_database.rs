@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 
 /// Represents data for a meditation session.
-/// 
+///
 /// # Fields
 /// - `datetime`: The UNIX timestamp representing the date and time of the meditation session.
 /// - `duration`: The duration of the meditation session in minutes.
@@ -9,10 +9,10 @@ use serde::{Deserialize, Serialize};
 /// - `speaker`: The name of the speaker or guide leading the meditation session.
 #[derive(Deserialize, Serialize, Clone, Debug, Default)]
 pub struct MeditationData {
-    datetime: i32,
-    duration: i32,
-    category: String,
-    speaker: String,
+    pub datetime: i32,
+    pub duration: i32,
+    pub category: String,
+    pub speaker: String,
 }
 
 /// A builder for creating instances of `MeditationData`.
@@ -126,7 +126,6 @@ impl MeditationDataBuilder {
         })
     }
 }
-
 
 #[cfg(test)]
 mod tests {

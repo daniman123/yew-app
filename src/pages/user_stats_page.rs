@@ -1,5 +1,5 @@
+use crate::components::features::user_stats::UserStats;
 use yew::prelude::*;
-use yew_app::components::features::user_stats::UserStats;
 
 #[function_component]
 pub fn UserStatsPage() -> Html {
