@@ -14,8 +14,10 @@ use crate::utils::database::database_manager::DatabaseManager;
 /// * `speaker` - A String specifying the name of the speaker or guide of the meditation session.
 ///
 
+// TODO - store key in constant file.
+const MEDITATION_LOG_KEY: &str = "meditationLog";
+
 pub fn log_meditation_data(datetime: i32, duration: i32, category: String, speaker: String) {
-    // Construct a new MeditationData object using the builder pattern.
     let meditation_data_builder = MeditationDataBuilder::new()
         .datetime(datetime)
         .duration(duration)
@@ -23,9 +25,8 @@ pub fn log_meditation_data(datetime: i32, duration: i32, category: String, speak
         .speaker(speaker)
         .build();
 
-    // Attempt to write the meditation data to the database.
     match meditation_data_builder {
-        Ok(meditation_data) => DatabaseManager::write_data(meditation_data, ""), // On success, write the data.
-        Err(_) => (), // On failure, do nothing.
+        Ok(meditation_data) => DatabaseManager::write_data(meditation_data, MEDITATION_LOG_KEY),
+        Err(_) => (),
     }
 }
