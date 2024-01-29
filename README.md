@@ -34,3 +34,7 @@ log_meditation.rs:
 This function takes in meditation data parameters, constructs a MeditationData object using
 the MeditationDataBuilder, and then attempts to write this data to the database using the
 DatabaseManager. If the construction of the MeditationData object fails, it does nothing.
+
+read_meditation_data.rs:
+The function `read_meditation_data` reads meditation data from a database.
+Returns - A vector of `MeditationData` objects is being returned.
