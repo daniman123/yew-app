@@ -4,12 +4,12 @@ use serde::{Deserialize, Serialize};
 ///
 /// # Fields
 /// - `datetime`: The UNIX timestamp representing the date and time of the meditation session.
-/// - `duration`: The duration of the meditation session in minutes.
+/// - `duration`: The duration of the meditation session in seconds.
 /// - `category`: A string categorizing the type of meditation.
 /// - `speaker`: The name of the speaker or guide leading the meditation session.
 #[derive(Deserialize, Serialize, Clone, Debug, Default)]
 pub struct MeditationData {
-    pub datetime: i32,
+    pub datetime: i64,
     pub duration: i32,
     pub category: String,
     pub speaker: String,
@@ -22,12 +22,12 @@ pub struct MeditationData {
 ///
 /// # Fields
 /// - `datetime`: Optional. The UNIX timestamp for the session's date and time.
-/// - `duration`: Optional. The session duration in minutes.
+/// - `duration`: Optional. The session duration in seconds.
 /// - `category`: Optional. A string categorizing the meditation type.
 /// - `speaker`: Optional. The name of the meditation session's speaker or guide.
 #[derive(Deserialize, Serialize, Clone, Debug, Default)]
 pub struct MeditationDataBuilder {
-    datetime: Option<i32>,
+    datetime: Option<i64>,
     duration: Option<i32>,
     category: Option<String>,
     speaker: Option<String>,
@@ -44,20 +44,18 @@ impl MeditationDataBuilder {
 
     /// Sets the `datetime` field for the meditation session.
     ///
-    /// # Arguments
-    /// - `datetime`: A value that can be converted into an `i32`, representing the UNIX timestamp.
-    ///
     /// # Returns
     /// A mutable reference to the builder itself (for chaining methods).
-    pub fn datetime(&mut self, datetime: impl Into<i32>) -> &mut Self {
-        self.datetime = Some(datetime.into());
+    pub fn datetime(&mut self) -> &mut Self {
+        let current_datetime = chrono::offset::Local::now();
+        self.datetime = Some(current_datetime.timestamp());
         self
     }
 
     /// Sets the `duration` of the meditation session.
     ///
     /// # Arguments
-    /// - `duration`: A value that can be converted into an `i32`, representing the duration in minutes.
+    /// - `duration`: A value that can be converted into an `i32`, representing the duration in seconds.
     ///
     /// # Returns
     /// A mutable reference to the builder itself (for chaining methods).
@@ -134,7 +132,7 @@ mod tests {
     #[test]
     fn test_meditation_data_builder() {
         let meditation_data_builder = MeditationDataBuilder::new()
-            .datetime(10)
+            .datetime()
             .duration(123)
             .category("category")
             .speaker("speaker")
@@ -147,7 +145,7 @@ mod tests {
     #[test]
     fn test_meditation_data_builder_non_zero() {
         let meditation_data_builder = MeditationDataBuilder::new()
-            .datetime(10)
+            .datetime()
             .duration(1)
             .category(" ")
             .speaker("speaker")

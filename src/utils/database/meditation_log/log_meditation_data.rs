@@ -9,7 +9,7 @@ use crate::utils::database::database_manager::DatabaseManager;
 ///
 /// # Arguments
 /// * `datetime` - An i32 representing the date and time of the meditation session.
-/// * `duration` - An i32 representing the duration of the meditation session in minutes.
+/// * `duration` - An i32 representing the duration of the meditation session in seconds.
 /// * `category` - A String specifying the category of the meditation session (e.g., "Mindfulness").
 /// * `speaker` - A String specifying the name of the speaker or guide of the meditation session.
 ///
@@ -17,9 +17,9 @@ use crate::utils::database::database_manager::DatabaseManager;
 // TODO - store key in constant file.
 const MEDITATION_LOG_KEY: &str = "meditationLog";
 
-pub fn log_meditation_data(datetime: i32, duration: i32, category: String, speaker: String) {
+pub fn log_meditation_data(duration: i32, category: String, speaker: String) {
     let meditation_data_builder = MeditationDataBuilder::new()
-        .datetime(datetime)
+        .datetime()
         .duration(duration)
         .category(category)
         .speaker(speaker)
