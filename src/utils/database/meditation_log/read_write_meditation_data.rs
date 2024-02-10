@@ -1,4 +1,5 @@
-use super::meditation_database::MeditationDataBuilder;
+use super::meditation_data_builder::MeditationData;
+use super::meditation_data_builder::MeditationDataBuilder;
 use crate::utils::database::database_manager::DatabaseManager;
 
 /// Logs meditation data into the database.
@@ -29,4 +30,13 @@ pub fn log_meditation_data(duration: i32, category: String, speaker: String) {
         Ok(meditation_data) => DatabaseManager::write_data(meditation_data, MEDITATION_LOG_KEY),
         Err(_) => (),
     }
+}
+
+/// The function `read_meditation_data` reads meditation data from a database.
+///
+/// Returns:
+///
+/// A vector of `MeditationData` objects is being returned.
+pub fn read_meditation_data() -> Vec<MeditationData> {
+    DatabaseManager::read_data(MEDITATION_LOG_KEY)
 }

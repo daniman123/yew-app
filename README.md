@@ -22,7 +22,7 @@ database_manager.rs:
 This struct can be serialized and deserialized for storage purposes
 Manages database operations for `MeditationData`.
 
-meditation_database.rs:
+meditation_data_builder.rs:
 `MeditationData` holds information about a meditation session.
 It includes the date and time of the session, its duration, the category of meditation,
 and the name of the speaker or guide.
@@ -35,9 +35,13 @@ This function takes in meditation data parameters, constructs a MeditationData o
 the MeditationDataBuilder, and then attempts to write this data to the database using the
 DatabaseManager. If the construction of the MeditationData object fails, it does nothing.
 
-read_meditation_data.rs:
+read_write_meditation_data.rs:
 The function `read_meditation_data` reads meditation data from a database.
 Returns - A vector of `MeditationData` objects is being returned.
+The function `log_meditation_data` logs meditation data into the database.
+This function takes in meditation data parameters, constructs a MeditationData object using
+the MeditationDataBuilder, and then attempts to write this data to the database using the
+DatabaseManager. If the construction of the MeditationData object fails, it does nothing.
 
 calculate_meditation_stats.rs:
 `StatsBuilder` is a builder for compiling meditation statistics from a set of `MeditationData`.

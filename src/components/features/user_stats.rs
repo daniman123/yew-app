@@ -2,7 +2,7 @@ use web_sys::wasm_bindgen::JsValue;
 use yew::prelude::*;
 
 use crate::utils::database::meditation_log::{
-    meditation_database::MeditationData, read_meditation_data::read_meditation_data,
+    meditation_data_builder::MeditationData, read_write_meditation_data::read_meditation_data,
 };
 
 #[derive(PartialEq, Properties)]

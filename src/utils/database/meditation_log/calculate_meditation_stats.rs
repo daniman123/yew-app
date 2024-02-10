@@ -1,4 +1,4 @@
-use super::meditation_database::MeditationData;
+use super::meditation_data_builder::MeditationData;
 use chrono::prelude::*;
 use std::collections::HashMap;
 

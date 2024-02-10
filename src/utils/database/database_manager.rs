@@ -3,7 +3,7 @@ use yew_app::services::local_storage::LocalStorageService;
 
 use super::{
     json_array_handler::{deserialize_json_array, serialize_json_array},
-    meditation_log::meditation_database::MeditationData,
+    meditation_log::meditation_data_builder::MeditationData,
 };
 
 /// A struct representing the data related to meditation.
