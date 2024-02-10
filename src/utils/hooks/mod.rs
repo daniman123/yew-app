@@ -1,1 +1,1 @@
-pub mod use_meditation_sate;
+pub mod use_meditation_state;

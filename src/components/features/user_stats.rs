@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::utils::hooks::use_meditation_sate::use_meditation_data;
+use crate::utils::hooks::use_meditation_state::use_meditation_data;
 
 #[derive(PartialEq, Properties)]
 pub struct UserStatsProps {}
