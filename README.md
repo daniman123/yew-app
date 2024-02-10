@@ -38,3 +38,6 @@ DatabaseManager. If the construction of the MeditationData object fails, it does
 read_meditation_data.rs:
 The function `read_meditation_data` reads meditation data from a database.
 Returns - A vector of `MeditationData` objects is being returned.
+
+calculate_meditation_stats.rs:
+`StatsBuilder` is a builder for compiling meditation statistics from a set of `MeditationData`.
