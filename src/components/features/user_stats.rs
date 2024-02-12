@@ -13,7 +13,7 @@ pub fn UserStats(props: &UserStatsProps) -> Html {
 
     html! {
         <div class="flex justify-center p-2">
-            <div id="introductions" class="grid p-6 rounded-xl bg-red-500">
+            <div id="introductions" class="grid p-6 rounded-xl bg-white shadow-md">
                 <div class="pb-1 text-2xl font-semibold border-b">{"Meditation Streak: "}{meditation_data.days_meditated_in_row as i64}</div>
                 <div id="sub-grid" class="px-4 py-1 text-sm font-semibold">
                     <div class="">{"Total Hours Meditated: "}{meditation_data.total_hours_meditated as i64}</div>

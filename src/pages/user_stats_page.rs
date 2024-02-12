@@ -4,6 +4,8 @@ use yew::prelude::*;
 #[function_component]
 pub fn UserStatsPage() -> Html {
     html! {
-        <UserStats/>
+        <>
+            <UserStats/>
+        </>
     }
 }
