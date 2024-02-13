@@ -1,5 +1,5 @@
+use crate::services::local_storage::LocalStorageService;
 use web_sys::wasm_bindgen::JsValue;
-use yew_app::services::local_storage::LocalStorageService;
 
 use super::{
     json_array_handler::{deserialize_json_array, serialize_json_array},

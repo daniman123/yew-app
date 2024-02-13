@@ -1,5 +1,7 @@
 use yew::prelude::*;
 
+use crate::components::layouts::primary_layout::PrimaryLayout;
+
 #[derive(PartialEq, Properties)]
 pub struct LandingPageProps {}
 
@@ -7,6 +9,9 @@ pub struct LandingPageProps {}
 pub fn LandingPage(props: &LandingPageProps) -> Html {
     let LandingPageProps {} = props;
     html! {
-        <h1>{"LandingPage"}</h1>
+        <PrimaryLayout>
+            <h1>{"LandingPage"}</h1>
+        </PrimaryLayout>
+
     }
 }
